@@ -1,0 +1,3 @@
+mcollective-puppetnoop
+
+An mcollective agent to edit config files using https://github.com/puppetlabs/puppetlabs-inifile to modify files autodynamagically
