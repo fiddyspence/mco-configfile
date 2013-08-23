@@ -1,3 +1,34 @@
 mcollective-puppetnoop
 
 An mcollective agent to edit config files using https://github.com/puppetlabs/puppetlabs-inifile to modify files autodynamagically
+
+peadmin@master:~$ mco rpc configfile edit file=/etc/puppetlabs/puppet/puppet.conf setting=certname value=master.puppetlabs.vm section=main --verbose
+Discovering hosts using the mc method for 2 second(s) .... 1
+
+ * [ ============================================================> ] 1 / 1
+
+
+master.puppetlabs.vm                    : OK
+    {"status"=>"success"}
+
+
+
+---- configfile#edit call stats ----
+           Nodes: 1 / 1
+     Pass / Fail: 1 / 0
+      Start Time: 2013-08-22 06:37:52 +0000
+  Discovery Time: 2002.99ms
+      Agent Time: 109.62ms
+      Total Time: 2112.61ms
+peadmin@master:~$ mco rpc configfile status file=/etc/puppetlabs/puppet/puppet.conf setting=certname section=main
+Discovering hosts using the mc method for 2 second(s) .... 1
+
+ * [ ============================================================> ] 1 / 1
+
+
+master.puppetlabs.vm
+   current setting: master.puppetlabs.vm
+
+
+
+Finished processing 1 / 1 hosts in 101.49 ms
